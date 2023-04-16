@@ -50,11 +50,15 @@ main img {
   flex: 2;
 }
 
+.group img {
+  width: 100%;
+}
+
 /* -------  Navigation ------- */
 
 header {
   background-color: #ff385c;
-  padding: 20px 20px 0 20px;
+  padding: 20px;
   text-align: center;
 }
 
@@ -62,6 +66,11 @@ header {
   font-family: "Pangolin", cursive;
   font-size: 72px;
   color: #fff;
+}
+
+#menu {
+  display: flex;
+  justify-content: center;
 }
 
 header nav ul li {
@@ -72,6 +81,10 @@ header nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 0 20px 0 0;
+}
+
+header nav ul li:last-child a {
+  padding: 0;
 }
 
 header nav ul li a:hover {
@@ -87,6 +100,7 @@ form {
 
 form label {
   font-weight: bold;
+  margin-right: 5px;
 }
 
 form select,
@@ -104,6 +118,12 @@ form button {
   width: 100%;
 }
 
+form div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
 /* -------  Footer ------- */
 
 footer {
@@ -117,3 +137,44 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+
+@media all and (min-width:480px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  form > div {
+    display: block;
+  }
+
+  form button {
+    width:unset;
+  }
+
+  form label {
+    display: block;
+  }
+
+  .group {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  #about div:last-child {
+    flex:2
+  }
+
+  #ideas .group .item{
+    flex: 1 1 calc(50% - 50px);
+  }
+}
